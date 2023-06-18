@@ -9,28 +9,30 @@ class Solution {
   public:
     int distributeTicket(int N, int K) {
         // code here
-        int i=1;
-        int j= N;
-        int count = 1;
-        while ((j-i)>K)
+        int a=1;
+        int b=N;
+        int c=1;
+        while(b-a>=K)
         {
-            if (count %2==1)
-            {
-                i=i+K;
-                count++;
-            }
-            else
-            {
-                j = j-K;
-                count++;
-            }
+         if(c%2==0)
+         {
+             b=b-K;
+             c++;
+             
+         }
+         else
+         {
+             a=a+K;
+             c++;
+         }
         }
-        
-        if (count%2 == 1)
+        if(c%2==0)
         {
-            return j;
+            return a;
         }
-        else return i;
+        else{
+            return b;
+        }
     }
 };
 
